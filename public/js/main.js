@@ -1,3 +1,6 @@
+let config = {};
+let pins = [];
+
 const slideshow = document.querySelector('.banner-slideshow');
 let slideshowImgs = [];
 
@@ -5,15 +8,26 @@ let videoPlaylistIndex = 0;
 let videoPlaylist = [];
 
 const briefOpt = {
-    duration: 2 * 60 * 1000,
-    slideInterval: 8000,
-    textScrollSpeed: 20,
     header: '',
     subheader: '',
     description: ''
 };
 
 (async () => {
+    // load config file
+    config = await snippet.ajax({
+        url: 'http://localhost:8080/conf',
+        type: 'get',
+        contentType: 'application/json; charset=utf-8'
+    });
+
+    // load pins
+    pins = (await snippet.ajax({
+        url: 'http://localhost:8080/pins',
+        type: 'get',
+        contentType: 'application/json; charset=utf-8'
+    })).pins;
+
     // get playlist url
     videoPlaylist = await snippet.ajax({
         url: 'http://localhost:8080/info/vid/corporate',
@@ -28,11 +42,13 @@ const briefOpt = {
 
         autoScrollPause = false;
 
-        let x = 0;
-        const l = setInterval(() => {
-            slideshow.style.backgroundImage = `url('.${slideshowImgs[x]}')`;
-            x = ++x % slideshowImgs.length;
-        }, briefOpt.slideInterval);
+        if (slideshowImgs.length > 0) {
+            let x = 0;
+            const l = setInterval(() => {
+                slideshow.style.backgroundImage = `url('.${slideshowImgs[x]}')`;
+                x = ++x % slideshowImgs.length;
+            }, config.imageSlideshowInterval);
+        }
 
         await snippet.sleep(briefOpt.duration);
 
@@ -79,7 +95,7 @@ async function autoScroll() {
     await $('.banner-body').animate({
         scrollTop: $('.banner-body').prop('scrollHeight')
     }, {
-        duration: ($('.banner-body').prop('scrollHeight') / briefOpt.textScrollSpeed) * 1000,
+        duration: ($('.banner-body').prop('scrollHeight') / config.descriptionScrollSpeed) * 1000,
         easing: 'linear'
     }).promise();
 
@@ -99,11 +115,11 @@ async function brief(content) {
         contentType: 'application/json; charset=utf-8'
     });
 
-    slideshow.style.backgroundImage = `url('.${slideshowImgs[0]}')`;
+    if (slideshowImgs.length > 0) {
+        slideshow.style.backgroundImage = `url('.${slideshowImgs[0]}')`;
+    }
 
     briefOpt.duration = content.duration;
-    briefOpt.slideInterval = 10000;
-    /* briefOpt.slideInterval = content.slideInterval; */
 
     $('.banner-title').text(content.header);
     $('.banner-subtitle').text(content.subheader);
@@ -124,15 +140,12 @@ mqttClient.on('message', (topic, message) => {
     }
 
     if (topic === 'loc-trigger') {
-        if (!(payload.fac && payload.duration && payload.slideInterval)) {
+        /* if (!(payload.fac && payload.duration && payload.slideInterval)) {
             return console.error('missing or invalid attribute in payload', payload);
             
-        }
-
-        brief(payload);
-
-        /* if (payload.textScrollSpeed) {
-            briefOpt.textScrollSpeed = payload.textScrollSpeed;
         } */
+        const content = pins.find(q => (q.label === payload.label));
+
+        brief(content);
     }
 });

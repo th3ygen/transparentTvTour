@@ -15,7 +15,7 @@ module.exports = {
                     return `/res/img/${req.params.fac}/${filename}`;
                 }));
             } else {
-                return res.status(404);
+                return res.status(200).send([]);
             }
         },
     },
