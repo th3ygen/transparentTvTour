@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+*::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: none;
+    box-shadow: none;
+	background-color: black;
+}
+
+*::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: black;
+}
+
+*::-webkit-scrollbar-thumb
+{
+	background-color: white;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-size: 18px;
+}
+
+.wrapper {
+    position: relative;
+
+    height: 100vh;
+    width: 100%;
+    
+    background-color: #00ADA5;
+
+    overflow: hidden;
+}
+
+.banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+
+    overflow: hidden;
+}
+
+.banner > .banner-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(2.5);
+
+    height: 0vw;
+    width: 0vw;
+
+    background-color: black;
+
+    border-radius: 50%;
+
+    z-index: 1;
+}
+.banner > .banner-bg-ending {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(2.5);
+
+    height: 100vw;
+    width: 100vw;
+
+    opacity: 0;
+
+    background-color: black;
+
+    border-radius: 50%;
+
+    z-index: 5;
+}
+
+.banner > .banner-header {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    height: fit-content;
+    width: fit-content;
+
+    padding: 0 30px;
+
+    font-size: 2rem;
+
+    opacity: 0;
+
+    color: #00ADA5;
+
+    z-index: 2;
+}
+
+.banner > .banner-header > .banner-title {
+    font-size: 3rem;
+    color: #00ADA5;
+
+    padding: .7rem 0;
+}
+
+.banner > .banner-body {
+    position: absolute;
+    top: 13rem;
+    left: 0;
+
+    max-height: 30%;
+    overflow-y: scroll;
+
+    padding: 0 50px;
+    
+    opacity: 0;
+
+    z-index: 2;
+}
+
+.banner > .banner-body > .banner-description {
+    text-align: justify;
+    color: gray;
+}
+
+.banner > .banner-slideshow {
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+
+    height: 35%;
+    width: calc(100% - 60px);
+
+    margin: 0 30px;
+
+    opacity: 0;
+
+    z-index: 2;
+
+    background-image: url('');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    transition: 2s;
+}
+
+.video {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    height: 100vh;
+    width: 100%;
+
+    object-fit: cover;
+
+    opacity: 1;
+
+    z-index: 0;
+}

@@ -1,0 +1,34 @@
+{
+    "pins": [
+        {
+            "label": "Canseleri Tun Abdul Razak UMP",
+            "description": "Donec tincidunt augue dictum molestie pulvinar. Suspendisse nisl enim, fermentum vel malesuada et, hendrerit sed urna. Morbi pretium tortor justo, sed commodo odio hendrerit id. Aliquam quis elit eget diam commodo cursus sed a sapien. Nulla faucibus sapien nec maximus pellentesque. Duis enim ex, blandit vel nibh eget, laoreet semper est. Proin sodales volutpat elit, eu fringilla nibh interdum ut. Quisque quis elit eu neque ornare condimentum.",
+            "coords": {
+                "lat": 3.54375,
+                "lon": 103.4284
+            },
+            "radius": 300,
+            "duration": 180000
+        },
+        {
+            "label": "Faculty of Electrical & Electronics Engineering",
+            "description": "Donec tincidunt augue dictum molestie pulvinar. Suspendisse nisl enim, fermentum vel malesuada et, hendrerit sed urna. Morbi pretium tortor justo, sed commodo odio hendrerit id. Aliquam quis elit eget diam commodo cursus sed a sapien. Nulla faucibus sapien nec maximus pellentesque. Duis enim ex, blandit vel nibh eget, laoreet semper est. Proin sodales volutpat elit, eu fringilla nibh interdum ut. Quisque quis elit eu neque ornare condimentum.",
+            "coords": {
+                "lat": 3.539472,
+                "lon": 103.43
+            },
+            "radius": 100,
+            "duration": 180000
+        },
+        {
+            "label": "Fakulti Teknologi Kejuruteraan Mekanikal & Automotif, UMP",
+            "description": "Donec tincidunt augue dictum molestie pulvinar. Suspendisse nisl enim, fermentum vel malesuada et, hendrerit sed urna. Morbi pretium tortor justo, sed commodo odio hendrerit id. Aliquam quis elit eget diam commodo cursus sed a sapien. Nulla faucibus sapien nec maximus pellentesque. Duis enim ex, blandit vel nibh eget, laoreet semper est. Proin sodales volutpat elit, eu fringilla nibh interdum ut. Quisque quis elit eu neque ornare condimentum.",
+            "coords": {
+                "lat": 3.538027,
+                "lon": 103.430742
+            },
+            "radius": 200,
+            "duration": 180000
+        }
+    ]
+}
