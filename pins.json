@@ -1,33 +1,51 @@
 {
     "pins": [
         {
-            "label": "Canseleri Tun Abdul Razak UMP",
+            "label": "fkom",
+            "header": "Faculty of Computing",
+            "subheader": "College of Computing & Applied Sciences",
             "description": "Donec tincidunt augue dictum molestie pulvinar. Suspendisse nisl enim, fermentum vel malesuada et, hendrerit sed urna. Morbi pretium tortor justo, sed commodo odio hendrerit id. Aliquam quis elit eget diam commodo cursus sed a sapien. Nulla faucibus sapien nec maximus pellentesque. Duis enim ex, blandit vel nibh eget, laoreet semper est. Proin sodales volutpat elit, eu fringilla nibh interdum ut. Quisque quis elit eu neque ornare condimentum.",
             "coords": {
                 "lat": 3.54375,
                 "lon": 103.4284
             },
-            "radius": 300,
+            "radius": 120,
+            "duration": 180000 
+        },
+        {
+            "label": "canseleri",
+            "header": "Canseleri Tun Abdul Razak UMP",
+            "subheader": "Canseleri Tun Abdul Razak UMP",
+            "description": "Donec tincidunt augue dictum molestie pulvinar. Suspendisse nisl enim, fermentum vel malesuada et, hendrerit sed urna. Morbi pretium tortor justo, sed commodo odio hendrerit id. Aliquam quis elit eget diam commodo cursus sed a sapien. Nulla faucibus sapien nec maximus pellentesque. Duis enim ex, blandit vel nibh eget, laoreet semper est. Proin sodales volutpat elit, eu fringilla nibh interdum ut. Quisque quis elit eu neque ornare condimentum.",
+            "coords": {
+                "lat": 3.543328,
+                "lon": 103.427850
+            },
+            "radius": 120,
             "duration": 180000
         },
         {
-            "label": "Faculty of Electrical & Electronics Engineering",
+            "label": "fkee",
+            "header": "Faculty of Electrical & Electronics Engineering",
+            "subheader": "Faculty of Electrical & Electronics Engineering",
             "description": "Donec tincidunt augue dictum molestie pulvinar. Suspendisse nisl enim, fermentum vel malesuada et, hendrerit sed urna. Morbi pretium tortor justo, sed commodo odio hendrerit id. Aliquam quis elit eget diam commodo cursus sed a sapien. Nulla faucibus sapien nec maximus pellentesque. Duis enim ex, blandit vel nibh eget, laoreet semper est. Proin sodales volutpat elit, eu fringilla nibh interdum ut. Quisque quis elit eu neque ornare condimentum.",
             "coords": {
-                "lat": 3.539472,
-                "lon": 103.43
+                "lat": 3.539496,
+                "lon": 103.429833
             },
-            "radius": 100,
+            "radius": 120,
             "duration": 180000
         },
         {
-            "label": "Fakulti Teknologi Kejuruteraan Mekanikal & Automotif, UMP",
+            "label": "fkp",
+            "header": "Faculty of Manufacturing & Mechatronic",
+            "subheader": "College of Engineering Technology",
             "description": "Donec tincidunt augue dictum molestie pulvinar. Suspendisse nisl enim, fermentum vel malesuada et, hendrerit sed urna. Morbi pretium tortor justo, sed commodo odio hendrerit id. Aliquam quis elit eget diam commodo cursus sed a sapien. Nulla faucibus sapien nec maximus pellentesque. Duis enim ex, blandit vel nibh eget, laoreet semper est. Proin sodales volutpat elit, eu fringilla nibh interdum ut. Quisque quis elit eu neque ornare condimentum.",
             "coords": {
-                "lat": 3.538027,
-                "lon": 103.430742
+                "lat": 3.537866,
+                "lon": 103.433885
             },
-            "radius": 200,
+            "radius": 120,
             "duration": 180000
         }
     ]

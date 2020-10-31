@@ -110,7 +110,7 @@ async function autoScroll() {
 
 async function brief(content) {
     slideshowImgs = await snippet.ajax({
-        url: `http://localhost:8080/info/img/${content.fac}`,
+        url: `http://localhost:8080/info/img/${content.label}`,
         type: 'get',
         contentType: 'application/json; charset=utf-8'
     });
@@ -132,20 +132,22 @@ async function brief(content) {
 autoScroll();
 
 mqttClient.on('message', (topic, message) => {
-    let payload;
     try {
-        payload = JSON.parse(message);
+        const payload = JSON.parse(message);
+
+        console.log(message, payload);
+        
+        if (topic === 'loc-trigger') {
+            const content = pins.find(q => (q.label === payload.label))
+
+            if (content) {
+                brief(content);
+            }
+            
+        }
     } catch(err) {
         return console.error(err);
     }
 
-    if (topic === 'loc-trigger') {
-        /* if (!(payload.fac && payload.duration && payload.slideInterval)) {
-            return console.error('missing or invalid attribute in payload', payload);
-            
-        } */
-        const content = pins.find(q => (q.label === payload.label));
-
-        brief(content);
-    }
+    
 });
