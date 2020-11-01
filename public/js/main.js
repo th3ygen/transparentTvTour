@@ -35,7 +35,7 @@ const briefOpt = {
         contentType: 'application/json; charset=utf-8'
     });
 
-    document.querySelector('.video').setAttribute('src', videoPlaylist[videoPlaylistIndex]);
+    document.querySelector('.video').setAttribute('src', `http://localhost:8080${videoPlaylist[videoPlaylistIndex]}`);
 
     (loop = async () => {
         await briefAnim.finished;
@@ -80,7 +80,7 @@ const briefOpt = {
 
 function onVideoEnd() {
     videoPlaylistIndex = ++videoPlaylistIndex % videoPlaylist.length;
-    document.querySelector('.video').setAttribute('src', videoPlaylist[videoPlaylistIndex]);
+    document.querySelector('.video').setAttribute('src', `http://localhost:8080${videoPlaylist[videoPlaylistIndex]}`);
 }
 
 let autoScrollPause = true;
@@ -116,7 +116,7 @@ async function brief(content) {
     });
 
     if (slideshowImgs.length > 0) {
-        slideshow.style.backgroundImage = `url('.${slideshowImgs[0]}')`;
+        slideshow.style.backgroundImage = `url('http://localhost:8080${slideshowImgs[0]}')`;
     }
 
     briefOpt.duration = content.duration;

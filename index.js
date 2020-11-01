@@ -6,7 +6,7 @@ const pins = require('./pins.json');
 
 const app = express();
 
-app.use('/res', express.static(path.join(__dirname, 'public/res')));
+app.use('/res', express.static(path.join(__dirname, 'res')));
 app.use('/info', require('./routers/resource.router'));
 
 app.use('/', express.static(path.join(__dirname, 'public')));

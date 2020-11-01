@@ -9,7 +9,7 @@ module.exports = {
     img: {
         byFac: async (req, res, next) => {
             if (req.params.fac === 'fkom') {
-                const files = await readdir(path.join(root.path, `public/res/img/${req.params.fac}`));
+                const files = await readdir(path.join(root.path, `res/img/${req.params.fac}`));
     
                 return res.status(200).send(files.map(filename => {
                     return `/res/img/${req.params.fac}/${filename}`;
@@ -22,7 +22,7 @@ module.exports = {
     
     video: {
         corporate: async (req, res, next) => {
-            const files = await readdir(path.join(root.path, `public/res/vid/corporate`));
+            const files = await readdir(path.join(root.path, 'res/vid/corporate'));
 
             return res.status(200).send(files.map(filename => {
                 return `/res/vid/corporate/${filename}`;
