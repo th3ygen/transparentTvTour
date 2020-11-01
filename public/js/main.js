@@ -42,9 +42,10 @@ const briefOpt = {
 
         autoScrollPause = false;
 
+        let l;
         if (slideshowImgs.length > 0) {
             let x = 0;
-            const l = setInterval(() => {
+            l = setInterval(() => {
                 slideshow.style.backgroundImage = `url('.${slideshowImgs[x]}')`;
                 x = ++x % slideshowImgs.length;
             }, config.imageSlideshowInterval);
@@ -132,22 +133,12 @@ async function brief(content) {
 autoScroll();
 
 mqttClient.on('message', (topic, message) => {
-    try {
-        const payload = JSON.parse(message);
+    if (topic === 'loc-trigger') {
+        const content = pins.find(q => (q.label === message.toString()))
 
-        console.log(message, payload);
-        
-        if (topic === 'loc-trigger') {
-            const content = pins.find(q => (q.label === payload.label))
-
-            if (content) {
-                brief(content);
-            }
-            
+        if (content) {
+            brief(content);
         }
-    } catch(err) {
-        return console.error(err);
     }
-
     
 });

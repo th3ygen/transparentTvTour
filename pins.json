@@ -10,7 +10,7 @@
                 "lon": 103.4284
             },
             "radius": 120,
-            "duration": 180000 
+            "duration": 5000
         },
         {
             "label": "canseleri",

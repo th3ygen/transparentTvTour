@@ -1,5 +1,7 @@
 const briefAnim = anime.timeline();
 
+document.querySelector('.banner-slideshow').style.opacity = 0;
+
 briefAnim.add({
     targets: '.banner-bg',
     height: '100vw',
