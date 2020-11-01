@@ -19,7 +19,6 @@ commands = [
     b'at!gpsloc?\r'
 ]
 
-# (label, lat, lon, radius)
 pins = []
 
 dev = serial.Serial("/dev/ttyUSB2", 115200, timeout=0)
@@ -74,7 +73,7 @@ while True:
                 
         print(data)
       
-        # apply haversine to all pins
+        # apply haversine to all pins while checking venue radius
         for x in range(len(pins)):
             pin = pins[x]
             dist = haversine((lat, lon), (float(pin['coords']['lat']), float(pin['coords']['lon'])), unit=Unit.METERS)
@@ -84,7 +83,6 @@ while True:
                 
                 for y in range(len(pins)):pins[y]['check'] = False
                 pin['check'] = True
-
 
     dev.write(b'at!gpsloc?\r')
     time.sleep(1)
